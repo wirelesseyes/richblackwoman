@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+</head>
+
+<body>
+    <!-- header  -->
+    <section class="top-line flexrow">
+        <div class="social">
+            <a href="tel:+12132694004" title="Telephone" class="ph">
+                <img src="image/about/iconmonstr-phone.svg">
+                <span>+1213-269-4004</span>
+            </a>
+            <a href="" title="Instagram" class="in">
+                <img src="image/about/iconmonstr-instagram.svg">
+                <span>Instagram</span>
+            </a>
+            <a href="" title="WhatsApp" class="wa">
+                <img src="image/about/iconmonstr-whatsapp.svg">
+                <span>WhatsApp</span>
+            </a>
+            <a href="" title="WhatsApp" class="wa">
+                <img src="image/about/iconmonstr-facebook-1-240.png">
+                <span>Facebook</span>
+            </a>
+            <a href="" title="WhatsApp" class="wa">
+                <img src="image/about/iconmonstr-twitter-1-240.png">
+                <span>Twitter</span>
+            </a>
+        </div>
+    </section>
+    <nav class="TranskNav">
+        <section class="navigation">
+            <div class="fst_content" id="fst_content">
+                <div class="menu-icon" id="menu-icon">
+                    <!-- <i class="fas "></i> -->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar" style="width: 15px"></span>
+                    <span class="icon-bar"></span>
+                </div>
+                <div class="logo"><a href=""><img src="image/logo.png" alt=""></a></div>
+
+                <div class="nav-content" id="nav-content">
+                    <ul class="nav-ul" id="nav-ul">
+                        <div class="navMediaLogo">
+                            <center>
+                                <a><img src="image/1.png" alt="Rich Black Woman" style="filter: brightness(2.5)" /></a>
+                            </center>
+                        </div>
+                        <div class="closeNavigation">
+                            <i class="tf-ion-android-close"></i>
+                        </div>
+
+                        <li>
+                            <a href="index.php">Home</a>
+                        </li>
+                        <li>
+                            <a href="about.php">About</a>
+                        </li>
+                        <li>
+                            <a href="contact.php">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="index.php">Relax Relate Release Retreat</a>
+                        </li>
+                        <li>
+                            <a href="index.php">Sales Coaching</a>
+                        </li>
+                        <li>
+                            <a href="moderator.php">Moderator</a>
+                        </li>
+                        <li>
+                            <a href="shop_RBW_couture_page.php">Shop RBW Couture</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="navRightSection">
+                    <!-- <div class="search-icon">
+              <span class="fas fa-search" aria-hidden="true"></span>
+            </div> -->
+                    <div class="close-src-bar search-icon">
+                        <!-- <span class="fas fa-search"></span> -->
+                        <span class="tf-ion-ios-search"></span>
+                    </div>
+                    <div class="close-src-bar cancel-icon">
+                        <span class="fas fa-times"></span>
+                    </div>
+                    <form action="" method="GET" class="search-box search-box-1">
+                        <input type="search" class="search-data" name="s" placeholder="Search here" required />
+                        <button type="submit" class="fas fa-search go-icon"></button>
+                    </form>
+                    <div class="card">
+                        <a href=""><i class="tf-ion-ios-cart-outline"></i></a>
+                    </div>
+
+                    <!-- profile indicator  -->
+                    <!-- <div class="profile">
+            <a href=""><i class="tf-profile-male"></i></a>
+          </div> -->
+                </div>
+            </div>
+        </section>
+    </nav>
+
+      <!-- navigation bar -->
+  <script>
+    var fst_content = document.getElementById("fst_content");
+    var nav_content = document.getElementById("nav-content");
+    var nav_ul = document.getElementById("nav-ul");
+    var menu_icon = document.getElementById("menu-icon");
+    const closeNavbar = document.querySelector(".closeNavigation");
+
+    const menuBtn = document.querySelector(".menu-icon span");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const items = document.querySelector(".nav-items");
+    const form = document.querySelector(".search-box");
+
+    closeNavbar.onclick = function () {
+      menu_icon.classList.remove("activeMenu_icon");
+      nav_ul.classList.remove("activeNav_ul");
+    };
+
+    menu_icon.onclick = function () {
+      menu_icon.classList.toggle("activeMenu_icon");
+      nav_ul.classList.toggle("activeNav_ul");
+      searchBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      form.classList.remove("active");
+      cancelBtn.style.color = "#ff3d00";
+    };
+
+    cancelBtn.onclick = () => {
+      searchBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      form.classList.remove("active");
+      cancelBtn.style.color = "#ff3d00";
+    };
+    searchBtn.onclick = () => {
+      form.classList.add("active");
+      searchBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+      menu_icon.classList.remove("activeMenu_icon");
+      nav_ul.classList.remove("activeNav_ul");
+    };
+    // scrolling effect 
+    var nav = document.querySelector("nav");
+    window.addEventListener("scroll", function (e) {
+      const lastPosition = window.scrollY;
+      if (lastPosition > 140) {
+        nav.classList.add("sticky-nav-color");
+        nav.classList.remove("TranskNav");
+      } else if (nav.classList.contains("sticky-nav-color")) {
+        nav.classList.remove("sticky-nav-color");
+        nav.classList.add("TranskNav");
+      } else {
+        nav.classList.remove("sticky-nav-color");
+        nav.classList.add("TranskNav");
+      }
+    });
+  </script>
+
+</body>
+
+</html>
